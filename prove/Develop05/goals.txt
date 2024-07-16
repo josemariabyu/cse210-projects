@@ -1,0 +1,4 @@
+SimpleGoal:Run a marathon,Complete a marathon race,1000,True
+EternalGoal:Read scriptures,Read scriptures daily,100
+ChecklistGoal:Attend temple,Attend the temple 10 times,50,1,10,500
+Score:1150
