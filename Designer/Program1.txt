@@ -1,0 +1,52 @@
+Abstraction with YouTube Videos
+Classes and Responsibilities
+Video Class
+
+Responsibilities:
+Track the title, author, and length (in seconds) of the video.
+Store and manage a list of comments.
+Provide a method to return the number of comments.
+Attributes:
+title (string)
+author (string)
+length (int)
+comments (list of Comment objects)
+Methods:
+__init__(title, author, length)
+add_comment(comment)
+get_comment_count()
+Comment Class
+
+Responsibilities:
+Track the name of the person who made the comment and the text of the comment.
+Attributes:
+name (string)
+text (string)
+Methods:
+__init__(name, text)
+
+
+
+Class Diagram
+
++-----------------------------------+
+|     Video                         |
++-----------------------------------+
+| - title: str                      |
+| - author: str                     | 
+| - length: int                     |
+| - comments: []                    |
++-----------------------------------+
+| + __init__(title, author, length) |
+| + add_comment(comment)            |
+| + get_comment_count()             |
++-----------------------------------+
+               |  
++-----------------------------------+
+|    Comment                        |
++-----------------------------------+
+| - name: str                       |
+| - text: str                       |
++-----------------------------------+
+| + __init__(name, text)            |
++-----------------------------------+

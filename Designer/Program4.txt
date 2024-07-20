@@ -1,0 +1,97 @@
+Program 4: Polymorphism with Exercise Tracking
+Classes and Responsibilities
+Activity Class (Base Class)
+
+Responsibilities:
+Contains the date and length of the activity.
+Provides virtual methods for getting the distance, speed, and pace.
+Provides a method to return a summary.
+Attributes:
+date (string)
+length (int)
+Methods:
+__init__(date, length)
+get_distance()
+get_speed()
+get_pace()
+get_summary()
+Running Class (Derived from Activity)
+
+Responsibilities:
+Contains the distance.
+Overrides the methods to return the distance, speed, and pace.
+Attributes:
+distance (float)
+Methods:
+__init__(date, length, distance)
+get_distance()
+get_speed()
+get_pace()
+Cycling Class (Derived from Activity)
+
+Responsibilities:
+Contains the speed.
+Overrides the methods to return the distance, speed, and pace.
+Attributes:
+speed (float)
+Methods:
+__init__(date, length, speed)
+get_distance()
+get_speed()
+get_pace()
+Swimming Class (Derived from Activity)
+
+Responsibilities:
+Contains the number of laps.
+Overrides the methods to return the distance, speed, and pace.
+Attributes:
+laps (int)
+Methods:
+__init__(date, length, laps)
+get_distance()
+get_speed()
+get_pace()
+
+
+Class Diagram
+
+
+
++---------------------------+  
+|      Activity             |  <--- Clase Base  
++---------------------------+  
+| - date: string            |  
+| - length: int             | 
++---------------------------+  
+| + __init__(date, length)  |  
+| + get_distance()          |  
+| + get_speed()             |  
+| + get_pace()              |  
+| + get_summary()           |  
++---------------------------+  
+          ^  
+          |  
+          |-------------------------------------------------------------------------+  
+          |                                                              |  
++-----------------------------------+                         +-----------------------------------+  
+|      Running                      |                         |       Cycling                     |  
++-----------------------------------+                         +-----------------------------------+  
+| - distance: float                 |                         | - speed: float                    |  
++-----------------------------------+                         +-----------------------------------+  
+| + __init__(date, length, distance)|                         | + __init__(date, length, speed)   |  
+| + get_distance()                  |                         | + get_distance()                  |  
+| + get_speed()                     |                         | + get_speed()                     |  
+| + get_pace()                      |                         | + get_pace()                      |  
++-----------------------------------+                         +-----------------------------------+  
+           |  
+           |  
++-----------------------------------+  
+|      Swimming                     |  
++-----------------------------------+  
+| - laps: int                       |  
++-----------------------------------+  
+| + __init__(date, length, laps)    |  
+| + get_distance()                  |  
+| + get_speed()                     |  
+| + get_pace()                      |  
++-----------------------------------+

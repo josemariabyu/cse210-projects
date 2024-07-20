@@ -1,0 +1,103 @@
+Encapsulation with Online Ordering
+Classes and Responsibilities
+Order Class
+
+Responsibilities:
+Contains a list of products and a customer.
+Can calculate the total cost of the order.
+Can return a string for the packing label.
+Can return a string for the shipping label.
+Attributes:
+products (list of Product objects)
+customer (Customer object)
+Methods:
+__init__(customer)
+add_product(product)
+calculate_total_cost()
+get_packing_label()
+get_shipping_label()
+Product Class
+
+Responsibilities:
+Contains the name, product id, price, and quantity of each product.
+Computes the total cost of the product.
+Attributes:
+name (string)
+product_id (string)
+price (float)
+quantity (int)
+Methods:
+__init__(name, product_id, price, quantity)
+get_total_cost()
+Customer Class
+
+Responsibilities:
+Contains a name and an address.
+Can determine whether the customer lives in the USA.
+Attributes:
+name (string)
+address (Address object)
+Methods:
+__init__(name, address)
+is_in_usa()
+Address Class
+
+Responsibilities:
+Contains the street address, city, state/province, and country.
+Can determine whether the address is in the USA.
+Can return a formatted string of the address.
+Attributes:
+street (string)
+city (string)
+state (string)
+country (string)
+Methods:
+__init__(street, city, state, country)
+is_in_usa()
+__str__()
+
+
+Class Diagram
+
+
++--------------------------------+       +------------------------+  
+|            Order               | 1   * |        Product         |  
++--------------------------------+-------+------------------------+  
+| - products: list[Product]      |<------| - name: str            |  
+| - customer: Customer           |       | - price: float         |  
++--------------------------------+       +------------------------+  
+| + __init__(customer)           |       | + __init__(name, price)|  
+| + add_product(product)         |       | + get_price()          |  
+| + calculate_total_cost()       |       +------------------------+  
+| + get_packing_label()          |  
+| + get_shipping_label()         |  
++--------------------------------+  
+            |  
+            |   
+            |   
+            | 
+            |  
+            |  
++------------------------+           
+|        Customer         |                 
++------------------------+  
+| - name: str            |  
+| - address: str         |  
++------------------------+  
+| + __init__(name, address) |  
+| + get_name()           |  
+| + get_address()        |  
++------------------------+
+
++------------------------------------------+
+|           Address                        |
++------------------------------------------+
+| - street: str                            |
+| - city: str                              |
+| - state: str                             |
+| - country: str                           |
++--------------------------------+
+| + __init__(street, city, state, country) |
+| + is_in_usa()                            |
+| + __str__()                              |
++------------------------------------------+

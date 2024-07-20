@@ -1,0 +1,92 @@
+Inheritance with Event Planning
+Classes and Responsibilities
+Event Class (Base Class)
+
+Responsibilities:
+Contains the event title, description, date, time, and address.
+Provides methods to return standard details, full details, and a short description.
+Attributes:
+title (string)
+description (string)
+date (string)
+time (string)
+address (Address object)
+Methods:
+__init__(title, description, date, time, address)
+get_standard_details()
+get_full_details()
+get_short_description()
+Lecture Class (Derived from Event)
+
+Responsibilities:
+Contains the speaker name and capacity.
+Overrides the full details method to include speaker name and capacity.
+Attributes:
+speaker (string)
+capacity (int)
+Methods:
+__init__(title, description, date, time, address, speaker, capacity)
+get_full_details()
+Reception Class (Derived from Event)
+
+Responsibilities:
+Contains an email for RSVP.
+Overrides the full details method to include the RSVP email.
+Attributes:
+rsvp_email (string)
+Methods:
+__init__(title, description, date, time, address, rsvp_email)
+get_full_details()
+Outdoor Gathering Class (Derived from Event)
+
+Responsibilities:
+Contains a statement of the weather.
+Overrides the full details method to include the weather statement.
+Attributes:
+weather_statement (string)
+Methods:
+__init__(title, description, date, time, address, weather_statement)
+get_full_details()
+
+
+
+Class Diagram
+
+
++--------------------+  
+|      Address       |  
++--------------------+  
+| - street: str      |  
+| - city: str        |  
+| - state: str       |  
+| - zip_code: str    |  
++--------------------+  
+| + __str__(): str   |  
++--------------------+  
+           |  
+           |  
+           |  
++-----------------------------------+  
+|       Event                       |  
++-----------------------------------+  
+| - title: str                      |  
+| - description: str                |    
+| - date: str                       |  
+| - time: str                       |  
+| - address: Address                |  
++-----------------------------------+  
+| + get_short_description(): str    |  
+| + get_full_details(): str         |  
++-----------------------------------+  
+           |  
+           |  
+           -------------------------------------------------------------------------------  
+           |                                           |                                 |  
++-----------------+-------------+-----------------+--------------------+--------------------------+  
+|     Lecture                 |             |    Reception    |                    |   OutdoorGathering       |  
++-----------------------------+             +---------------------------+          +--------------------------+  
+| - speaker: str              |             | - rsvp_email: str         |          | - weather_statement: str |  
+| - capacity: int             |             +---------------------------+          +--------------------------+  
++-----------------+                         | + get_full_details(): str |  
+| + get_full_details(): str   |             | + get_full_details(): str |  
++-----------------------------+             +---------------------------+
